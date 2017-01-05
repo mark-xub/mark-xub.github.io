@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="工作经验," />
 
 
 
@@ -96,12 +96,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mark's Note">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。对于实时系统，按照wiki的说法：
+
+Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correct">
+<meta property="og:type" content="article">
+<meta property="og:title" content="由实时系统想到的">
+<meta property="og:url" content="http://yoursite.com/2017/01/05/realtime/index.html">
 <meta property="og:site_name" content="Mark's Note">
+<meta property="og:description" content="到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。对于实时系统，按照wiki的说法：
+
+Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correct">
+<meta property="og:updated_time" content="2017-01-05T09:07:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mark's Note">
+<meta name="twitter:title" content="由实时系统想到的">
+<meta name="twitter:description" content="到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。对于实时系统，按照wiki的说法：
+
+Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correct">
 
 
 
@@ -129,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/05/realtime/"/>
 
 
 
 
 
-  <title> Mark's Note </title>
+  <title> 由实时系统想到的 | Mark's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -166,9 +176,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +267,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -294,10 +302,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/05/realtime/" itemprop="url">
-                  由实时系统想到的
-                </a>
+                由实时系统想到的
               
             
           </h1>
@@ -348,172 +353,71 @@
       
 
       
-        
-          <p>到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。<br>对于实时系统，按照wiki的说法：</p>
+        <p>到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。<br>对于实时系统，按照wiki的说法：</p>
 <blockquote>
 <p>Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correctness depends on their temporal aspects as well as their functional aspects. </p>
 </blockquote>
-<p>也就是说，实时系统是指，在给定的时间限制内，程序必须完成响应。程序的正确性不仅依赖于逻辑正确还依赖于时效性。<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/05/realtime/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<p>也就是说，实时系统是指，在给定的时间限制内，程序必须完成响应。程序的正确性不仅依赖于逻辑正确还依赖于时效性。<br><a id="more"></a><br>一般的业务系统，我们小码农开发的时候很少考虑时效性，功能正常就行，一个原因是我们默认访问数据库，数据库响应10ms以内，另一个原因是一般的业务对时效性要求不高，能容忍一定的脏数据。</p>
+<p>到这里，其实讨论一个系统是不是实时已经没有意义了，我们重要的是保证程序正确，它需要考虑逻辑是否正确，时效性是否符合要求。</p>
+<p>比如说实时搜索，延迟多久才是合适的呢？首先，用户等待的耐心可能最多就3s，你必须在3s内返回，3s是上限。其次，在这段延迟时间内，你搜索的结果不能很大概率发生了变更，导致不符合用户筛选的条件，这个错误率必须是一个可容忍的范围内。</p>
+<p>恩，大概就是这个意思。</p>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/29/build-blog/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Mark.Xu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Mark's Note">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Mark's Note" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/29/build-blog/" itemprop="url">
-                  搭建博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T16:39:29+08:00">
-                2016-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/工作经验/" rel="tag"># 工作经验</a>
           
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>没事折腾一下，其实很久以前也搭过，试一下<a href="https://hexo.io/">Hexo</a>。<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/29/build-blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/29/build-blog/" rel="next" title="搭建博客">
+                <i class="fa fa-chevron-left"></i> 搭建博客
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -521,6 +425,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -688,6 +596,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
