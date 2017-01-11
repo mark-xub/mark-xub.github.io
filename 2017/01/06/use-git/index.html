@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工作经验," />
+  <meta name="keywords" content="工具," />
 
 
 
@@ -96,22 +96,33 @@
 
 
 
-<meta name="description" content="到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。对于实时系统，按照wiki的说法：
+<meta name="description" content="workspace、index与head首先，我们先区分workspace、index、head的概念，这是基础，理解了对大部分命令也就了然了。  
 
-Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correct">
+
+workspace（working tree），就是你现在编辑的源文件和目录  
+index（staging area），git 特别设计的一个暂存区，用来保存还没提交的修改
+local repository，是所在仓库的所有分支信息，而head">
 <meta property="og:type" content="article">
-<meta property="og:title" content="由实时系统想到的">
-<meta property="og:url" content="http://yoursite.com/2017/01/05/realtime/index.html">
+<meta property="og:title" content="git 使用总结">
+<meta property="og:url" content="http://yoursite.com/2017/01/06/use-git/index.html">
 <meta property="og:site_name" content="Mark's Note">
-<meta property="og:description" content="到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。对于实时系统，按照wiki的说法：
+<meta property="og:description" content="workspace、index与head首先，我们先区分workspace、index、head的概念，这是基础，理解了对大部分命令也就了然了。  
 
-Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correct">
-<meta property="og:updated_time" content="2017-01-05T09:07:44.000Z">
+
+workspace（working tree），就是你现在编辑的源文件和目录  
+index（staging area），git 特别设计的一个暂存区，用来保存还没提交的修改
+local repository，是所在仓库的所有分支信息，而head">
+<meta property="og:image" content="http://yoursite.com/img/gitinfo.png">
+<meta property="og:updated_time" content="2017-01-11T07:38:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="由实时系统想到的">
-<meta name="twitter:description" content="到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。对于实时系统，按照wiki的说法：
+<meta name="twitter:title" content="git 使用总结">
+<meta name="twitter:description" content="workspace、index与head首先，我们先区分workspace、index、head的概念，这是基础，理解了对大部分命令也就了然了。  
 
-Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correct">
+
+workspace（working tree），就是你现在编辑的源文件和目录  
+index（staging area），git 特别设计的一个暂存区，用来保存还没提交的修改
+local repository，是所在仓库的所有分支信息，而head">
+<meta name="twitter:image" content="http://yoursite.com/img/gitinfo.png">
 
 
 
@@ -139,13 +150,13 @@ Real-time programs must guarantee response within specified time constraints, of
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/05/realtime/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/06/use-git/"/>
 
 
 
 
 
-  <title> 由实时系统想到的 | Mark's Note </title>
+  <title> git 使用总结 | Mark's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -278,7 +289,7 @@ Real-time programs must guarantee response within specified time constraints, of
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/05/realtime/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/06/use-git/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Mark.Xu">
@@ -302,7 +313,7 @@ Real-time programs must guarantee response within specified time constraints, of
             
             
               
-                由实时系统想到的
+                git 使用总结
               
             
           </h1>
@@ -317,8 +328,8 @@ Real-time programs must guarantee response within specified time constraints, of
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-05T09:48:08+08:00">
-                2017-01-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-06T21:26:39+08:00">
+                2017-01-06
               </time>
             
 
@@ -353,14 +364,47 @@ Real-time programs must guarantee response within specified time constraints, of
       
 
       
-        <p>到底什么是实时或者准实时？平时经常听到这些词汇，有些概念还是要理理清楚。<br>对于实时系统，按照wiki的说法：</p>
+        <h3 id="workspace、index与head"><a href="#workspace、index与head" class="headerlink" title="workspace、index与head"></a>workspace、index与head</h3><p>首先，我们先区分workspace、index、head的概念，这是基础，理解了对大部分命令也就了然了。  </p>
+<p><img src="/img/gitinfo.png" alt="dd"></p>
+<ul>
+<li>workspace（working tree），就是你现在编辑的源文件和目录  </li>
+<li>index（staging area），git 特别设计的一个暂存区，用来保存还没提交的修改</li>
+<li>local repository，是所在仓库的所有分支信息，而head是一个指向当前提交的指针</li>
+</ul>
+<a id="more"></a>  
+<h3 id="add-与-diff"><a href="#add-与-diff" class="headerlink" title="add 与 diff"></a>add 与 diff</h3><p>当 git add 一个文件时，git其实做了 </p>
+<ul>
+<li>把文件内容通过SHA1算法生成的签名保存在<strong>.git/index</strong>目录下  </li>
+<li>把文件内容变成blob对象保存在<strong>.git/objects</strong>目录下 </li>
+</ul>
+<p>所以 git diff 比较的是working tree与index<br>git diff –cached 比较的是index与head，即将要提交的变更<br>git diff head 比较的是working tree与head  </p>
+<h3 id="checkout、reset与revert"><a href="#checkout、reset与revert" class="headerlink" title="checkout、reset与revert"></a>checkout、reset与revert</h3><ul>
+<li>checkout 是将head移动到一个新的分支，作用于working tree，所以要把当前未提交的修改add到暂存区</li>
+<li>reset 是删除之前的提交记录,作用范围具体看命令文档 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">--mixed               reset HEAD and index  </div><div class="line">--soft                reset only HEAD  </div><div class="line">--hard                reset HEAD, index and working tree  </div><div class="line">--merge               reset HEAD, index and working tree</div></pre></td></tr></table></figure>
+<ul>
+<li>revert 是用一个新的提交覆盖原来的提交来达到回滚的目的</li>
+</ul>
 <blockquote>
-<p>Real-time programs must guarantee response within specified time constraints, often referred to as “deadlines”.Systems of this type whose correctness depends on their temporal aspects as well as their functional aspects. </p>
+<p>注意reset与revert的区别</p>
+<blockquote>
+<p>如果一个branch在reset之后与原来的branch合并,reset时删除的提交记录还会出现，而revert不会。</p>
 </blockquote>
-<p>也就是说，实时系统是指，在给定的时间限制内，程序必须完成响应。程序的正确性不仅依赖于逻辑正确还依赖于时效性。<br><a id="more"></a><br>一般的业务系统，我们小码农开发的时候很少考虑时效性，功能正常就行，一个原因是我们默认访问数据库，数据库响应10ms以内，另一个原因是一般的业务对时效性要求不高，能容忍一定的脏数据。</p>
-<p>到这里，其实讨论一个系统是不是实时已经没有意义了，我们重要的是保证程序正确，它需要考虑逻辑是否正确，时效性是否符合要求。</p>
-<p>比如说实时搜索，延迟多久才是合适的呢？首先，用户等待的耐心可能最多就3s，你必须在3s内返回，3s是上限。其次，在这段延迟时间内，你搜索的结果不能很大概率发生了变更，导致不符合用户筛选的条件，这个错误率必须是一个可容忍的范围内。</p>
-<p>恩，大概就是这个意思。</p>
+</blockquote>
+<h3 id="rebase-与-merge"><a href="#rebase-与-merge" class="headerlink" title="rebase 与 merge"></a>rebase 与 merge</h3><ul>
+<li>使用merge，在分支合并时会产生一次新的提交</li>
+<li>使用rebase，能把提交记录变成线性，防止每次都产生一次新的提交，但是它会使得本地的提交记录更改<br>他们的一些区别可以看<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing/conceptual-overview" target="_blank" rel="external">这里</a>  </li>
+</ul>
+<blockquote>
+<p>最佳实践</p>
+<blockquote>
+<ul>
+<li>如果要使用rebase，必须保证你当前的分支没有其他人用，并且upstream的分支上没有存在你当前分支的提交内容，否则就不要用</li>
+<li>如果使用merge，最好加上–no-ff,保证一个清晰的分支提交，其他人能清楚的了解到merge的目的</li>
+</ul>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -384,7 +428,7 @@ Real-time programs must guarantee response within specified time constraints, of
       
         <div class="post-tags">
           
-            <a href="/tags/工作经验/" rel="tag"># 工作经验</a>
+            <a href="/tags/工具/" rel="tag"># 工具</a>
           
         </div>
       
@@ -393,8 +437,8 @@ Real-time programs must guarantee response within specified time constraints, of
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/29/build-blog/" rel="next" title="搭建博客">
-                <i class="fa fa-chevron-left"></i> 搭建博客
+              <a href="/2017/01/05/realtime/" rel="next" title="由实时系统想到的">
+                <i class="fa fa-chevron-left"></i> 由实时系统想到的
               </a>
             
           </div>
@@ -402,10 +446,6 @@ Real-time programs must guarantee response within specified time constraints, of
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/06/use-git/" rel="prev" title="git 使用总结">
-                git 使用总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -452,8 +492,17 @@ Real-time programs must guarantee response within specified time constraints, of
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -502,6 +551,22 @@ Real-time programs must guarantee response within specified time constraints, of
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#workspace、index与head"><span class="nav-number">1.</span> <span class="nav-text">workspace、index与head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-与-diff"><span class="nav-number">2.</span> <span class="nav-text">add 与 diff</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#checkout、reset与revert"><span class="nav-number">3.</span> <span class="nav-text">checkout、reset与revert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase-与-merge"><span class="nav-number">4.</span> <span class="nav-text">rebase 与 merge</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
