@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="系统设计,编程," />
 
 
 
@@ -96,16 +96,16 @@
 
 
 
-<meta name="description" content="没事折腾一下，其实很久以前也搭过，试一下Hexo。">
+<meta name="description" content="这篇文章酝酿了好久，工作快4年了，想在编程上做点总结，形成自己的设计编码原则。往小了说，就是怎样写优雅的代码；往大了说，就是怎样做系统设计。既然题目是OO and FO，那我现在的设计理念就是用OO来自顶而下的设计，抽象出稳定的接口；对一些变化十分灵活的领域，用FO来自底而上实现功能，组合出多变的实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建博客">
-<meta property="og:url" content="http://yoursite.com/2016/12/29/build-blog/index.html">
+<meta property="og:title" content="OO and FO">
+<meta property="og:url" content="http://yoursite.com/2017/01/17/object-oriented/index.html">
 <meta property="og:site_name" content="Mark's Note">
-<meta property="og:description" content="没事折腾一下，其实很久以前也搭过，试一下Hexo。">
-<meta property="og:updated_time" content="2016-12-30T05:17:42.000Z">
+<meta property="og:description" content="这篇文章酝酿了好久，工作快4年了，想在编程上做点总结，形成自己的设计编码原则。往小了说，就是怎样写优雅的代码；往大了说，就是怎样做系统设计。既然题目是OO and FO，那我现在的设计理念就是用OO来自顶而下的设计，抽象出稳定的接口；对一些变化十分灵活的领域，用FO来自底而上实现功能，组合出多变的实现。">
+<meta property="og:updated_time" content="2017-05-19T07:34:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建博客">
-<meta name="twitter:description" content="没事折腾一下，其实很久以前也搭过，试一下Hexo。">
+<meta name="twitter:title" content="OO and FO">
+<meta name="twitter:description" content="这篇文章酝酿了好久，工作快4年了，想在编程上做点总结，形成自己的设计编码原则。往小了说，就是怎样写优雅的代码；往大了说，就是怎样做系统设计。既然题目是OO and FO，那我现在的设计理念就是用OO来自顶而下的设计，抽象出稳定的接口；对一些变化十分灵活的领域，用FO来自底而上实现功能，组合出多变的实现。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/29/build-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/17/object-oriented/"/>
 
 
 
 
 
-  <title> 搭建博客 | Mark's Note </title>
+  <title> OO and FO | Mark's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/29/build-blog/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/17/object-oriented/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Mark.Xu">
@@ -296,7 +296,7 @@
             
             
               
-                搭建博客
+                OO and FO
               
             
           </h1>
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T16:39:29+08:00">
-                2016-12-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-17T18:43:50+08:00">
+                2017-01-17
               </time>
             
 
@@ -347,14 +347,21 @@
       
 
       
-        <p>没事折腾一下，其实很久以前也搭过，试一下<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>。<br><a id="more"></a></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>跟着Hexo的guide，就可以轻松构建一个blog系统了，不再赘述。</p>
-<h3 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h3><p>我选了最热门的<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a>，按照guide配置很简单，选择自己喜欢的就好。</p>
-<h3 id="选择Markdown编辑器"><a href="#选择Markdown编辑器" class="headerlink" title="选择Markdown编辑器"></a>选择Markdown编辑器</h3><p>Mac下选择了<a href="http://macdown.uranusjr.com/" target="_blank" rel="external">MacDown</a>，开源，免费。</p>
-<h3 id="部署到公网"><a href="#部署到公网" class="headerlink" title="部署到公网"></a>部署到公网</h3><p>利用<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>，可以把博客部署到公网中。<br>修改_config.yml  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: ssh://git@github.com/mark-xub/mark-xub.github.io</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>之后当运行 Hexo deploy -g 时，就会把内容推送到github上，就能访问啦。</p>
-<h3 id="博客托管"><a href="#博客托管" class="headerlink" title="博客托管"></a>博客托管</h3><p>当然是用github，把一些配置和文章保存起来，以防丢失。<br>Next主题有个小坑，about页面的列表渲染没有小圆圈，查了一下已经有人提<a href="https://github.com/iissnan/hexo-theme-next/issues/934" target="_blank" rel="external">issue</a>了，但是作者还没修复。解决方案就是修改blog\themes\next\source\css_custom\custom.styl 文件，加入<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> &#123;</div><div class="line">   <span class="attribute">list-style-type</span>: circle;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>这篇文章酝酿了好久，工作快4年了，想在编程上做点总结，形成自己的设计编码原则。往小了说，就是怎样写优雅的代码；往大了说，就是怎样做系统设计。<br>既然题目是OO and FO，那我现在的设计理念就是用OO来自顶而下的设计，抽象出稳定的接口；对一些变化十分灵活的领域，用FO来自底而上实现功能，组合出多变的实现。<br><a id="more"></a>  </p>
+<h2 id="OO"><a href="#OO" class="headerlink" title="OO"></a>OO</h2><p>对于OO，我觉得最重要的就是<strong>高内聚，低耦合</strong>，以及我们一开始就学到的<strong>SOLID原则</strong>。<br>单一职责原则，这个职责的划分，我觉得可以根据需求来，避免过度设计，可以在真正出现变化的时候，再进行分离。<br>开闭原则，我觉得这是一个最直观，并且在业务系统里面很重要的，因为当我要添加一个逻辑的时候，对我来说就是按照以前同质的实现，直接加，如果还要我关心其他逻辑，那往往会引发故障。<br>里氏替换原则，其实就是实现类不应该改变接口定义的行为，他们是”同一类“。<br>依赖倒置原则，其实就是<strong>面向接口编程</strong>。<br>接口隔离原则，其实就是最小化依赖，这样被迫改动点少。  </p>
+<p>我的OO设计原则: 分清问题域，划分职责，站在使用方设计稳定好用的接口,实现时最重要的是抽象，并且考虑开闭原则。在实践中，对于重复要修改的部分，往往要分离出来的。一个业务系统，关键业务点就那么几个，要修改的也就那么几个，经过经验积累，就能发现哪些模块需要进行分离。还有一些是一次性的业务，怎么简单怎么来吧，有的时候还是凭感觉，看品味，盲目的遵循原则也是没必要的，orz~~当然，对于一些基础设施的代码那是必须要考虑清楚的。</p>
+<h2 id="FO"><a href="#FO" class="headerlink" title="FO"></a>FO</h2><p>我对FO现在还在学习阶段，吸取函数式编程的思想，面向组合子编程。</p>
+<h2 id="Refactor"><a href="#Refactor" class="headerlink" title="Refactor"></a>Refactor</h2><p>重构是必须的，需求会变，程序的结构也要跟着变，采用正交设计的原则进行重构。</p>
+<p>不写了，越总结越觉得自己菜，写java4年，入门了没？</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li><a href="https://www.zhihu.com/question/20275578/answer/26577791" target="_blank" rel="external">面向对象的弊端</a></li>
+<li><a href="http://coolshell.cn/articles/8745.html" target="_blank" rel="external">如此理解面向对象编程</a></li>
+<li><a href="http://www.cnblogs.com/liuyanlong/archive/2013/05/27/3102161.html" target="_blank" rel="external">元编程之javascript</a></li>
+<li><a href="https://www.oreilly.com/learning/java-8-functional-interfaces" target="_blank" rel="external">java 8 functional interfaces——Madhusudhan Konda</a></li>
+<li><a href="http://www.jianshu.com/p/f7f5813882a1" target="_blank" rel="external">正交设计，OO与SOLID</a></li>
+<li><a href="http://ajoo.iteye.com/blog/23303" target="_blank" rel="external">论面向组合子程序设计方法之创世纪</a></li>
+<li><a href="http://mindhacks.cn/2006/10/15/cantor-godel-turing-an-eternal-golden-diagonal/" target="_blank" rel="external">康托尔、哥德尔、图灵——永恒的金色对角线</a></li>
+</ol>
 
       
     </div>
@@ -378,7 +385,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag"># 工具</a>
+            <a href="/tags/系统设计/" rel="tag"># 系统设计</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
           
         </div>
       
@@ -387,14 +396,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/06/use-git/" rel="next" title="git 使用总结">
+                <i class="fa fa-chevron-left"></i> git 使用总结
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/05/realtime/" rel="prev" title="由实时系统想到的">
-                由实时系统想到的 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/19/ioc/" rel="prev" title="ioc">
+                ioc <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择主题"><span class="nav-number">2.</span> <span class="nav-text">选择主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择Markdown编辑器"><span class="nav-number">3.</span> <span class="nav-text">选择Markdown编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到公网"><span class="nav-number">4.</span> <span class="nav-text">部署到公网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客托管"><span class="nav-number">5.</span> <span class="nav-text">博客托管</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OO"><span class="nav-number">1.</span> <span class="nav-text">OO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FO"><span class="nav-number">2.</span> <span class="nav-text">FO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refactor"><span class="nav-number">3.</span> <span class="nav-text">Refactor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">3.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
